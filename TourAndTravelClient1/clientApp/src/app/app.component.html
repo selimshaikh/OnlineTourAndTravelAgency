@@ -1,0 +1,28 @@
+ <div class="main-container">
+  <mat-toolbar color="warn" class="main-toolbar">
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1 [routerLink]="['/home']">Selim Tour And Travel Agency</h1>
+      <span class="menu-spacer"></span>
+      <a mat-button [routerLink]="['/home']"></a>
+      <a mat-button [routerLink]="['/aboutUs']">About Us</a>
+      <a mat-button [routerLink]="['/booking']">Booking</a>
+      <a mat-button [routerLink]="['/tourpackage']">Tour Package</a>
+      <a mat-button [routerLink]="['/hotel']">Hotel</a>
+      <a mat-button [routerLink]="['/more']">More</a>
+      <a mat-button [routerLink]="['/contact']">Contacts</a> 
+    </mat-toolbar-row>
+  </mat-toolbar>
+ 
+  <div>
+    <router-outlet></router-outlet>
+
+  </div>
+  <app-footer></app-footer>
+</div>
+
+
+
+

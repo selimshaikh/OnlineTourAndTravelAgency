@@ -1,0 +1,32 @@
+<mat-card class="form-card mat-elevation-z2">
+  <mat-card-header>
+    <mat-card-title>Add Yourself</mat-card-title>
+    <mat-card-subtitle>Fill up the form</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form #f="ngForm" (ngSubmit)="onSubmitForm(f)">
+      <mat-form-field class="frm-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput name="name" [(ngModel)]="contact.name" #name="ngModel" required/>
+        <mat-error *ngIf="name.tuched && name.invalid">Name is required</mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field class="frm-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput name="email" [(ngModel)]="contact.email" #email="ngModel" required/>
+        <mat-error *ngIf="email.tuched && email.invalid">Email is required</mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field class="frm-full-width">
+        <mat-label>Message</mat-label>
+        <input matInput name="message" [(ngModel)]="contact.message" />
+      </mat-form-field>
+      <br />
+      <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid"><mat-icon>control_point</mat-icon>Submit</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+<div style="justify-content:flex-start; position:fixed;bottom:180px;left:130px;">
+  <button mat-mini-fab color="warm" [routerLink]="['/contact']"><mat-icon>arrow_back</mat-icon></button>
+</div>
+

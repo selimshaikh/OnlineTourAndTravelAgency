@@ -1,0 +1,35 @@
+<div class="card-container">
+  <mat-card >
+    <mat-card-header>
+      <mat-card-title>Contact With Selim Tour And Travel Agency</mat-card-title>
+      <mat-card-subtitle>List of Contact</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <table mat-table [dataSource]="contactDataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef><b>Name</b></th>
+          <td mat-cell *matCellDef="let element">{{element.name}}</td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef><b>Email</b></th>
+          <td mat-cell *matCellDef="let element">{{element.email}}</td>
+        </ng-container>
+        <ng-container matColumnDef="message">
+          <th mat-header-cell *matHeaderCellDef><b>Message</b></th>
+          <td mat-cell *matCellDef="let element">{{element.message}}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [length]="100"
+                     [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]" >
+
+      </mat-paginator>
+    </mat-card-content>
+  </mat-card>
+  <div style="justify-content:flex-end"; position:fixed;bottom:180px;right:140px;>
+    <button mat-mini-fab color="warn" [routerLink]="['/contact-add']"><mat-icon>add</mat-icon></button>
+  </div>
+</div>
+
